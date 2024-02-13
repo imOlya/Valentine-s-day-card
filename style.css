@@ -1,0 +1,78 @@
+@import "https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #bd1212;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-top: 60px;
+    margin-left: 95px;
+}
+  
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: #bd1212;
+}
+  
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+  
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.7);
+    }
+}
+
+.text {
+    font-family: "UnifrakturCook", cursive;
+    font-weight: 700;
+    font-style: normal;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: none;
+    color: black;
+    font-size: 30px;
+  }
+  .card:hover .text {
+    display: block;
+  }
